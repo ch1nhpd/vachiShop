@@ -6,7 +6,7 @@ servlet + spring mvc + spring security
     + website có hiển thị khuyến mại, giảm giá, thiết lập sản phẩm liên quan khi người dùng chọn một sản phẩm.
     + cho phép người dùng lọc, tìm kiếm sản phẩm theo nhiều tiêu chí.
     + Ngoài ra người dùng còn có thể đọc những tin tức về sức khỏe, cách chăm sóc sức khỏe, có thể đăng kí nhận mail thông báo khi có bài đăng mới.
-  - bên phía admin: 
+  - bên phía admin: (có nhiều loại admin với nhiều nhiệm vụ và quyền khác nhau)
     + quản lí sản phẩm, bài viết.
     + quản lí hoạt động nhập xuất hàng.
     + thống kê, sắp xếp từng loại mặt hàng.
