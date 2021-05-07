@@ -18,6 +18,9 @@ public class ProductEntity extends BaseEntity{
 	@Column
 	private Long view;
 	
+	@Column
+	private float rateAvg;
+	
 	@ManyToMany(mappedBy="products_on_bill")
 	private List<BillEntity> bills = new ArrayList<>();
 	
@@ -63,6 +66,14 @@ public class ProductEntity extends BaseEntity{
 	private String linkImage;
 	
 	
+
+	public float getRateAvg() {
+		return rateAvg;
+	}
+
+	public void setRateAvg(float rateAvg) {
+		this.rateAvg = rateAvg;
+	}
 
 	public String getLinkImage() {
 		return linkImage;

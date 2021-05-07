@@ -6,6 +6,8 @@ import java.util.List;
 public class ProductDTO extends AbstractDTO{
 	
 	private Long view;
+	
+	private float rateAvg;
 
 	private List<BillDTO> bills = new ArrayList<>();
 	
@@ -34,6 +36,14 @@ public class ProductDTO extends AbstractDTO{
 	private Long saleOff;
 	
 	private String linkImage;
+
+	public float getRateAvg() {
+		return rateAvg;
+	}
+
+	public void setRateAvg(float rateAvg) {
+		this.rateAvg = rateAvg;
+	}
 
 	public Long getPriceSaleOff() {
 		return priceSaleOff;
