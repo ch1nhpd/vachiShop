@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <decorators defaultdir="/decorators">
 
+
+	<decorator name="trang-chu" page="web.jsp">
+		<pattern>/*</pattern>
+	</decorator>
+
+	<decorator name="quan-tri" page="admin.jsp">
+		<pattern>/quan-tri*</pattern>
+	</decorator>
+
+	<decorator name="login" page="login.jsp">
+		<pattern>/dang-nhap</pattern>
+	</decorator>
 	
-    <decorator name="trang-chu" page="web.jsp">
-       <pattern>/*</pattern>
-    </decorator>
-    
-    <decorator name="quan-tri" page="admin.jsp">
-       <pattern>/quan-tri*</pattern>
-    </decorator>
-    
-        <decorator name="login" page="login.jsp">
-        <pattern>/dang-nhap</pattern>
-    </decorator>
+	<decorator name="signUp" page="signUp.jsp">
+		<pattern>/dang-ky</pattern>
+	</decorator>
 
 </decorators>

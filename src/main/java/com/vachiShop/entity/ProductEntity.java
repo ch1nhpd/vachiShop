@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -13,59 +14,57 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "product")
-public class ProductEntity extends BaseEntity{
-	
-	@Column
-	private Long view;
-	
-	@Column
-	private float rateAvg;
-	
-	@ManyToMany(mappedBy="products_on_bill")
-	private List<BillEntity> bills = new ArrayList<>();
-	
-	@ManyToMany(mappedBy = "products_on_cart")
-	private List<CartEntity> carts = new ArrayList<>();
-	
+public class ProductEntity extends BaseEntity {
+
+	@OneToMany(mappedBy = "productOnBill")
+	private List<BillProductEntity> billProducts;
+
+	@OneToMany(mappedBy = "productOnCart")
+	private List<ProductCartEntity> productCarts = new ArrayList<>();
+
 	@ManyToMany(mappedBy = "products_on_favorite")
 	private List<FavoriteProductEntity> favorites = new ArrayList<>();
-	
+
 	@ManyToOne
 	@JoinColumn(name = "category_id")
 	private CategoryEntity category;
-	
+
 	@OneToMany(mappedBy = "product")
-	private List<FeedbackEntity> feedbacks = new ArrayList<>(); 
-	
+	private List<FeedbackEntity> feedbacks = new ArrayList<>();
+
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private UserEntity user_product;
-	
+
+	@Column
+	private Long view;
+
+	@Column(precision = 8, scale = 2)
+	private float rateAvg;
+
 	@Column
 	private String name;
-	
+
 	@Column
 	private String code;
-	
-	@Column(length=2000)
+
+	@Column(length = 2000)
 	private String description;
-	
-	@Column(length=2000)
+
+	@Column(length = 2000)
 	private String information;
-	
-	@Column(length=2000)
-	private String usage;
-	
+
+	@Column(length = 2000)
+	private String usagee;
+
 	@Column
 	private Long price;
-	
+
 	@Column
 	private Long saleOff;
-	
+
 	@Column
 	private String linkImage;
-	
-	
 
 	public float getRateAvg() {
 		return rateAvg;
@@ -91,20 +90,20 @@ public class ProductEntity extends BaseEntity{
 		this.saleOff = saleOff;
 	}
 
-	public List<BillEntity> getBills() {
-		return bills;
+	public List<BillProductEntity> getBillProducts() {
+		return billProducts;
 	}
 
-	public void setBills(List<BillEntity> bills) {
-		this.bills = bills;
+	public void setBillProducts(List<BillProductEntity> billProducts) {
+		this.billProducts = billProducts;
 	}
 
-	public List<CartEntity> getCarts() {
-		return carts;
+	public List<ProductCartEntity> getProductCarts() {
+		return productCarts;
 	}
 
-	public void setCarts(List<CartEntity> carts) {
-		this.carts = carts;
+	public void setProductCarts(List<ProductCartEntity> productCarts) {
+		this.productCarts = productCarts;
 	}
 
 	public Long getView() {
@@ -171,12 +170,12 @@ public class ProductEntity extends BaseEntity{
 		this.information = information;
 	}
 
-	public String getUsage() {
-		return usage;
+	public String getUsagee() {
+		return usagee;
 	}
 
-	public void setUsage(String usage) {
-		this.usage = usage;
+	public void setUsagee(String usagee) {
+		this.usagee = usagee;
 	}
 
 	public Long getPrice() {
@@ -194,7 +193,5 @@ public class ProductEntity extends BaseEntity{
 	public void setCode(String code) {
 		this.code = code;
 	}
-	
-	
-	
+
 }

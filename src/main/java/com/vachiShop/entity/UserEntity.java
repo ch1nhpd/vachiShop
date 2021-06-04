@@ -46,6 +46,19 @@ public class UserEntity extends BaseEntity{
 	
 	@Column
 	private String fullName;
+	
+	@Column
+	private int status;
+	
+	
+
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
+	}
 
 	public List<BillEntity> getBills() {
 		return bills;

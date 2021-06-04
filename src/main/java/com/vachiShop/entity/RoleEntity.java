@@ -3,6 +3,7 @@ package com.vachiShop.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -17,7 +18,21 @@ public class RoleEntity extends BaseEntity{
 	@JoinTable(name = "role_user", joinColumns = @JoinColumn(name = "role_id"), inverseJoinColumns = @JoinColumn(name="user_id"))
 	private List<UserEntity> users = new ArrayList<>();
 
+	@Column
 	private String name;
+	
+	@Column
+	private String code;
+	
+	
+
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
 
 	public List<UserEntity> getUsers() {
 		return users;

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
     <persistence-unit name="persistence-data">
-        <class>com.vachiShop.entity.NewEntity</class>
+        <class>com.vachiShop.entity.ProductEntity</class>
+       <class>com.vachiShop.entity.NewEntity</class>
         <class>com.vachiShop.entity.CategoryEntity</class>
         <class>com.vachiShop.entity.UserEntity</class>
         <class>com.vachiShop.entity.RoleEntity</class>
@@ -9,8 +10,8 @@
         <class>com.vachiShop.entity.CartEntity</class>
         <class>com.vachiShop.entity.ContactEntity</class>
         <class>com.vachiShop.entity.FeedbackEntity</class>
-        <class>com.vachiShop.entity.ProductEntity</class>
         <class>com.vachiShop.entity.StatusOfBillEntity</class>
+        <class>com.vachiShop.entity.FavoriteProductEntity</class> 
     </persistence-unit>
 </persistence>
 
